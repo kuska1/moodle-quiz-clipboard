@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Moodle Quiz Clipboard",
+    "version": "1.0",
+    "description": "Adds on moodle quizes button for copy questions.",
+    "permissions": ["scripting", "clipboardWrite"],
+    "content_scripts": [
+      {
+        "matches": ["*://*/mod/quiz/*"],
+        "js": ["script.js"]
+      }
+    ]
+  }
+  
