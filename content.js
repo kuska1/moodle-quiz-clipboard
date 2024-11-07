@@ -2,7 +2,7 @@
 function extractQuestionAndAnswers() {
   // Question
   const questionElement = document.querySelector('.qtext p[dir="ltr"]');
-  const questionText = questionElement ? questionElement.innerText : "Question not found";
+  const questionText = questionElement ? questionElement.innerText : chrome.i18n.getMessage("question_not_found");
 
   let fullText;
 
@@ -35,12 +35,11 @@ function extractQuestionAndAnswers() {
 function copyTextToClipboard(event) {
   event.preventDefault();
   event.stopPropagation();
-
   const textToCopy = extractQuestionAndAnswers()
   navigator.clipboard.writeText(textToCopy).then(() => {
-    alert("Text copied to clipboard!");
+    alert(chrome.i18n.getMessage("alert")+"\n\n"+textToCopy);
   }).catch(err => {
-    console.error("[MQC] Error: ", err);
+    console.error("[MQC] "+chrome.i18n.getMessage("error"), err);
   });
 }
 
@@ -49,12 +48,12 @@ function addCopyButton() {
   const possearch = document.querySelector('.content');
   if (possearch) {
     const copyButton = document.createElement("no");
-    copyButton.textContent = "Copy text";
+    copyButton.textContent = chrome.i18n.getMessage("button_text");
     copyButton.classList.add("copy-button");
     copyButton.addEventListener("click", copyTextToClipboard);
     possearch.insertAdjacentElement("afterend", copyButton);
   } else {
-    console.log("[MQC] Can't add copy button.");
+    console.log("[MQC] "+chrome.i18n.getMessage("button_error"));
   }
 }
 
