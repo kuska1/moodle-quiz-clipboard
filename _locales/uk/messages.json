@@ -1,0 +1,26 @@
+{
+    "description": {
+        "message": "Додає на moodle кнопку для копіювання запитань.",
+        "description": "Text for description"
+      },
+    "question_not_found": {
+      "message": "Запитання не знайдено",
+      "description": "Text for question_not_found"
+    },
+    "alert": {
+      "message": "Текст скопійовано до буфера обміну!",
+      "description": "Text for alert"
+    },
+    "button_text": {
+      "message": "Скопіювати",
+      "description": "Text for button_text"
+    },
+    "button_error": {
+        "message": "Неможливо додати кнопку копіювання!",
+        "description": "Text for button_error"
+    },
+    "error": {
+        "message": "Помилка: ",
+        "description": "Text for error"
+    }
+}

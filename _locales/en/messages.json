@@ -1,0 +1,26 @@
+{
+    "description": {
+        "message": "Adds on moodle quizes button for copy questions.",
+        "description": "Text for description"
+      },
+    "question_not_found": {
+      "message": "Question not found",
+      "description": "Text for question_not_found"
+    },
+    "alert": {
+      "message": "Text copied to clipboard!",
+      "description": "Text for alert"
+    },
+    "button_text": {
+      "message": "Copy",
+      "description": "Text for button_text"
+    },
+    "button_error": {
+        "message": "Can't add copy button!",
+        "description": "Text for button_error"
+    },
+    "error": {
+        "message": "Error: ",
+        "description": "Text for error"
+    }
+}
