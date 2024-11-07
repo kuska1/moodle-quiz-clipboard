@@ -1,13 +1,23 @@
 {
     "manifest_version": 3,
     "name": "Moodle Quiz Clipboard",
+    "short_name": "MQC",
     "version": "1.0",
+    "version_name": "1.0 Dev",
     "description": "Adds on moodle quizes button for copy questions.",
+    "icons": {
+      "128": "images/icon-128.png"
+    },
+    "author": {
+      "email": "kusakaonelove@gmail.com"
+    },
+    "homepage_url": "https://github.com/kuska1/moodle-quiz-clipboard",
     "permissions": ["scripting", "clipboardWrite"],
     "content_scripts": [
       {
-        "matches": ["*://*/mod/quiz/*"],
-        "js": ["script.js"]
+        "matches": ["*://*/mod/quiz/attempt.php*"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
       }
     ]
   }
