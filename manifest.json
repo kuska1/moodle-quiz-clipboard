@@ -2,8 +2,8 @@
     "manifest_version": 3,
     "name": "Moodle Quiz Clipboard",
     "short_name": "MQC",
-    "version": "1.1",
-    "version_name": "1.1 Public",
+    "version": "1.2",
+    "version_name": "1.2 Public",
     "default_locale": "en",
     "description": "__MSG_description__",
     "icons": {
