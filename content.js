@@ -1,4 +1,3 @@
-
 function extractQuestionAndAnswers() {
   // Question label
   const questionElement = document.querySelector('.qtext p[dir="ltr"]');
@@ -53,6 +52,12 @@ function addCopyButton() {
     const copyButton = document.createElement("MQC");
     copyButton.textContent = chrome.i18n.getMessage("button_text");
     copyButton.classList.add("copy-button");
+    copyButton.style.webkitTouchCallout = 'none'; // Disables the callout on iOS
+    copyButton.style.webkitUserSelect = 'none';  // Disables selection on webkit browsers
+    copyButton.style.khtmlUserSelect = 'none';   // For older Konqueror browsers
+    copyButton.style.mozUserSelect = 'none';     // Disables selection on Firefox
+    copyButton.style.msUserSelect = 'none';      // Disables selection on Internet Explorer/Edge
+    copyButton.style.userSelect = 'none';        // Standard user-select property
     copyButton.addEventListener("click", copyTextToClipboard);
     possearch.insertAdjacentElement("beforeend", copyButton);
   } else {
