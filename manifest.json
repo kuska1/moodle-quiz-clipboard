@@ -19,9 +19,8 @@
     "permissions": ["scripting", "clipboardWrite"],
     "content_scripts": [
       {
-        "matches": ["*://*/mod/quiz/attempt.php*", "*://*/mod/quiz/review.php*", "file:///*"],
-        "js": ["content.js"],
-        "css": ["styles.css"]
+        "matches": ["*://*/mod/quiz/attempt.php*", "*://*/mod/quiz/review.php*"],
+        "js": ["content.js"]
       }
     ]
   }
