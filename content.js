@@ -1,12 +1,12 @@
 function extractQuestionAndAnswers() {
   // Question label
-  const questionElement = document.querySelector('.qtext p[dir="ltr"]');
+  const questionElement = document.querySelector('.qtext');
   const questionText = questionElement ? questionElement.innerText : chrome.i18n.getMessage("question_not_found");
 
   // Question block
   const firstQuestionBlock = questionElement.closest('.content');
   const selectElements = firstQuestionBlock ? firstQuestionBlock.querySelectorAll('.control select') : [];
-  const labelElements = firstQuestionBlock ? firstQuestionBlock.querySelectorAll('.text p[dir="ltr"]') : [];
+  const labelElements = firstQuestionBlock ? firstQuestionBlock.querySelectorAll('.text') : [];
 
   let fullText;
 
@@ -21,7 +21,7 @@ function extractQuestionAndAnswers() {
       fullText = `${questionText}\n${subQuestions.join('\n')}\n\n${answerOptions.join('\n')}`;
   } else {
       // Subquestions not found (SelectElements)
-      const answers = Array.from(firstQuestionBlock.querySelectorAll('.answer p[dir="ltr"]'))
+      const answers = Array.from(firstQuestionBlock.querySelectorAll('.answer'))
           .map((answer, index) => `${String.fromCharCode(97 + index)}. ${answer.innerText.trim()}`);
       // Text formatting (Question\na.Answer)
       fullText = `${questionText}\n${answers.join('\n')}`;
@@ -51,7 +51,7 @@ function addCopyButton() {
     // Successfully added button
     const copyButton = document.createElement("MQC");
     copyButton.textContent = chrome.i18n.getMessage("button_text");
-    copyButton.classList.add("copy-button btn btn-primary");
+    copyButton.classList.add("copy-button", "btn", "btn-primary");
     copyButton.addEventListener("click", copyTextToClipboard);
     possearch.insertAdjacentElement("beforeend", copyButton);
   } else {
